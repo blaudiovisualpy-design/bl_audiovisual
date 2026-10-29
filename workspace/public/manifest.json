@@ -1,0 +1,17 @@
+{
+  "name": "BL Audiovisual",
+  "short_name": "BL Audio",
+  "description": "Productora audiovisual premium. Producción cinematográfica con identidad visual única.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0C0A",
+  "theme_color": "#F0D200",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

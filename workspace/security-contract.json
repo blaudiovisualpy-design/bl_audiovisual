@@ -1,0 +1,43 @@
+{
+  "version": "OPENCLAW_PROJECT_SECURITY_CONTRACT_V1",
+  "project": "bl_audiovisual",
+  "controls": {
+    "mutationOrigin": "strict-fail-closed",
+    "csrf": "strict-origin-or-signed-token",
+    "authorization": "server-side-capabilities",
+    "rateLimit": "persistent-file-backed",
+    "uploadValidation": "mime-plus-content-signature",
+    "cookie": "httpOnly-sameSite-protocol-aware",
+    "secretFallback": "forbidden"
+  },
+  "roleCapabilities": {
+    "ADMIN": [
+      "ADMIN_ACCESS",
+      "CONTENT_WRITE",
+      "USER_MANAGE",
+      "SENSITIVE_SETTINGS"
+    ],
+    "EDITOR": [
+      "ADMIN_ACCESS",
+      "CONTENT_WRITE"
+    ]
+  },
+  "evidence": [
+    {
+      "path": "src/lib/request-security.ts",
+      "marker": "OPENCLAW_PROJECT_REQUEST_SECURITY_V1"
+    },
+    {
+      "path": "src/lib/persistent-rate-limit.ts",
+      "marker": "OPENCLAW_PERSISTENT_RATE_LIMIT_V1"
+    },
+    {
+      "path": "src/lib/auth.ts",
+      "marker": "OPENCLAW_ROLE_CAPABILITIES_V1"
+    },
+    {
+      "path": "src/app/api/admin/upload/route.ts",
+      "marker": "detectImage"
+    }
+  ]
+}
